@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+    if (typeof io === 'undefined') {
+        alert("錯誤：無法連接到伺服器。此遊戲需要 Node.js 後端，無法在 GitHub Pages 等靜態託管服務上運行。\nError: Cannot connect to server. This game requires a Node.js backend and cannot run on static hosting like GitHub Pages.");
+        return;
+    }
     const socket = io();
 
     // Elements
