@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 線上多人版</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="game-area">
+            <div class="header">
+                <h1>2048</h1>
+                <div class="scores">
+                    <div class="score-container">0</div>
+                    <div class="best-container">0</div>
+                </div>
+            </div>
+            <div class="controls">
+                <input type="text" id="playerName" placeholder="輸入你的名字" maxlength="10">
+                <button id="restartBtn">重新開始</button>
+            </div>
+            <div class="game-container">
+                <div class="game-message">
+                    <p></p>
+                    <div class="lower">
+                        <a class="retry-button">再來一次</a>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="grid-row">
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                    </div>
+                </div>
+                <div class="tile-container">
+                    <!-- Tiles will be injected here by JS -->
+                </div>
+            </div>
+            <p class="game-explanation">
+                <strong class="important">玩法說明：</strong> 使用 <strong>方向鍵</strong> 移動方塊。當兩個數字相同的方塊碰在一起時，它們會 <strong>合二為一！</strong>
+            </p>
+        </div>
+
+        <div class="sidebar">
+            <h2>即時排行榜</h2>
+            <ul id="leaderboard">
+                <!-- Leaderboard items will be injected here -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
